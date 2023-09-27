@@ -11,7 +11,7 @@ export const env = createEnv({
     NODE_ENV: z.enum(["development", "test", "production"]),
     NEXTAUTH_SECRET: z.string().min(1),
     // If deployed on vercel, don't require NEXAUTH_URL
-    NEXAUTH_URL:
+    NEXTAUTH_URL:
       typeof process.env.VERCEL_URL === "string"
         ? z.string().url().optional()
         : z.string().url(),
@@ -33,7 +33,7 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-    NEXAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**
